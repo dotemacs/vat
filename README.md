@@ -1,5 +1,7 @@
 # `vat`
 
+[![Build Status](https://semaphoreci.com/api/v1/dotemacs/vat/branches/master/shields_badge.svg)](https://semaphoreci.com/dotemacs/vat)
+
 A Clojure library designed to look up VAT numbers on
 [VAT Information Exchange System](http://ec.europa.eu/taxation_customs/vies/)
 
