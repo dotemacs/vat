@@ -5,6 +5,12 @@
 A Clojure library designed to look up VAT numbers on
 [VAT Information Exchange System](http://ec.europa.eu/taxation_customs/vies/)
 
+## Install
+
+```clojure
+[vat "0.1.0"]
+```
+
 ## Usage
 
 ```clojure
