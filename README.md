@@ -7,5 +7,11 @@ A Clojure library designed to look up VAT numbers on
 
 ```clojure
 (require '[vat.core :as vat])
-(vat/look-up-number :country-code "GB" :vat-number "678")
+(vat/look-up-number "GB" "678")
+```
+
+Or if you just care of the VAT numbers in United Kingdom:
+
+```clojure
+(vat/look-up-number "678")
 ```

@@ -54,12 +54,19 @@
       Boolean/valueOf
       boolean))
 
+(defn parse-the-response
+  [response]
+  (if (= 200 (:status response))
+    (is-valid? (:body response))
+    {:error {:status (:status response) :body (:body response)}}))
+
 (defn look-up-number
   "looks up a `vat-number` for a given `country-code`
   returns either true or false if the request succeeds
   or a hash map with {:error {:status status :body body}}"
-  [& {:keys [country-code vat-number]}]
-  (let [response @(post-to-vias (soap-request country-code vat-number))]
-    (if (= 200 (:status response))
-      (is-valid? (:body response))
-      {:error {:status (:status response) :body (:body response)}})))
+  ([vat-number]
+   (let [response @(post-to-vias (soap-request "GB" vat-number))]
+    (parse-the-response response)))
+  ([country-code vat-number]
+   (let [response @(post-to-vias (soap-request country-code vat-number))]
+     (parse-the-response response))))
