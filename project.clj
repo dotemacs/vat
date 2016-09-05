@@ -1,4 +1,4 @@
-(defproject vat "0.1.0-SNAPSHOT"
+(defproject vat "0.1.0"
   :description "VAT Information Exchange System lookup"
   :url "http://github.com/dotemacs/vat"
   :license {:name "BSD"
