@@ -1,7 +1,7 @@
 (ns vat.core
   (:require [org.httpkit.client :as http]
-            [clojure.xml :as xml]
-            [clojure.data.xml :refer [element emit-str]]))
+            [clojure.data.xml :refer [element emit-str]]
+            [clj-xpath.core :as xpath :only [$x]]))
 
 (defn soap-envelope
   "return soap envelope for VIAS SOAP service"
@@ -33,26 +33,14 @@
                        "SOAPAction" "checkVat"}
              :body soap-request}))
 
-
-(defn xml-to-hashmap
-  "convert XML to a hashmap"
-  [xml]
-  (xml/parse (java.io.ByteArrayInputStream. (.getBytes xml))))
-
 (defn is-valid?
   "parse the VIAS response"
   [result]
-  (-> (xml-to-hashmap result)
-      :content
+  (->> result
+      (xpath/$x "//valid")
       first
-      :content
-      first
-      :content
-      (nth 3)
-      :content
-      first
-      Boolean/valueOf
-      boolean))
+      :text
+      Boolean/valueOf))
 
 (defn parse-the-response
   [response]
