@@ -8,7 +8,7 @@ A Clojure library designed to look up VAT numbers on
 ## Install
 
 ```clojure
-[vat "0.1.0"]
+[vat "0.1.1"]
 ```
 
 ## Usage
