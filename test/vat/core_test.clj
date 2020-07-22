@@ -1,6 +1,6 @@
 (ns vat.core-test
-  (:require [clojure.test :refer :all]
-            [vat.core :refer :all]))
+  (:require [clojure.test :refer [deftest testing is]]
+            [vat.core :refer [soap-request is-valid?]]))
 
 (deftest soap-request-test
   (testing "soap request"

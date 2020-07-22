@@ -1,7 +1,7 @@
 (ns vat.core
   (:require [org.httpkit.client :as http]
             [clojure.data.xml :refer [element emit-str]]
-            [clj-xpath.core :as xpath :only [$x]]))
+            [clj-xpath.core :as xpath]))
 
 (defn soap-envelope
   "return soap envelope for VIAS SOAP service"
