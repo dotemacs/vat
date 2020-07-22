@@ -3,7 +3,7 @@
   :url "http://github.com/dotemacs/vat"
   :license {:name "BSD"
             :url "https://opensource.org/licenses/BSD-2-Clause"}
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [http-kit "2.2.0"]
+  :dependencies [[org.clojure/clojure "1.10.1"]
+                 [http-kit "2.3.0"]
                  [org.clojure/data.xml "0.0.8"]
                  [com.github.kyleburton/clj-xpath "1.4.11"]])
